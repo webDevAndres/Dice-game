@@ -13,7 +13,15 @@ var getRandomNumber = function (max) {
     return random;
 };
 var changePlayer = function () {
-    //
+    if ($("current").firstChild.nodeValue == $("player1").value) {
+        $("current").firstChild.nodeValue = $("player2").value;
+    }
+    else {
+        $("current").firstChild.nodeValue = $("player1").value;
+        $("die").value = "0";
+        $("total").value = "0";
+        $("roll").focus();
+    }
 };
 
 var newGame = function () {
