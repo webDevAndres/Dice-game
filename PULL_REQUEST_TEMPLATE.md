@@ -4,8 +4,9 @@
 # What is the acceptance criteria for the proposed solution?
 
 
-### Merging Checklist
 
--[] PR approved
--[] All checks pass
--[] Manual tests approved
+## Merging Checklist
+
+- [] PR approved
+- [] All checks pass
+- [] Manual tests
