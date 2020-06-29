@@ -49,7 +49,20 @@ var rollDice = function () {
     $("total").value = total;
 };
 var holdTurn = function () {
-
+    var score;
+    var total = parseInt($("total").value);
+    if ($("current").firstChild.nodeValue == $("player1").value) {
+        score = $("score1");
+    } else {
+        score = $("score2");
+    }
+    score.value = parseInt(score.value) + total;
+    if(score.value >= 100) {
+        alert($("current").firstChild.nodeValue + " WINS!");
+        newGame();
+    } else {
+        changePlayer();
+    }
 };
 window.onload = function () {
     $("new_game").onclick = newGame;
