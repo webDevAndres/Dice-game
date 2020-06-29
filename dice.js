@@ -18,10 +18,11 @@ var changePlayer = function () {
     }
     else {
         $("current").firstChild.nodeValue = $("player1").value;
-        $("die").value = "0";
-        $("total").value = "0";
-        $("roll").focus();
     }
+    
+    $("die").value = "0";
+    $("total").value = "0";
+    $("roll").focus();
 };
 
 var newGame = function () {
@@ -36,7 +37,16 @@ var newGame = function () {
     }
 };
 var rollDice = function () {
-
+    var total = parseInt($("total").value);
+    var die = getRandomNumber(6);
+    if (die == 1) {
+        total = 0;
+        changePlayer();
+    } else {
+        total = total + die;
+    }
+    $("die").value = die;
+    $("total").value = total;
 };
 var holdTurn = function () {
 
